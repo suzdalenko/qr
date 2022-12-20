@@ -1,0 +1,758 @@
+@font-face {
+    font-family: raleway;
+    src: url(../fonts/raleway/Raleway-Regular.ttf)
+}
+
+.bgredLight {
+    background: #ee7274
+}
+
+.colorRedLight {
+    color: #ee7274
+}
+
+.bggreenLlood {
+    background: #a1b000
+}
+
+.colorGreenLlood {
+    color: #a1b000
+}
+
+.bgblueLight {
+    background: #8eb8de
+}
+
+.bgred {
+    background: #b6171f
+}
+
+.bg-verde-ubicaciones {
+    background: #00c41c;
+}
+
+.bg-amarillo-ubicaciones {
+    background: #ffff33;
+}
+
+.bg-rojo-ubicaciones {
+    background: #e7505a!important;
+}
+
+.bg-black {
+    background: #000000;
+}
+
+.celdaMapaUbicaciones {
+    border: solid 1px black;
+    min-height: 10px;
+    min-width: 10px !important;
+}
+
+.fontwhite {
+    color: #fff
+}
+
+.placehwite::-webkit-input-placeholder {
+    color: #fff
+}
+
+.placehwite::-moz-placeholder {
+    color: #fff
+}
+
+.placehwite:-ms-input-placeholder {
+    color: #fff
+}
+
+.placehwite:-moz-placeholder {
+    color: #fff
+}
+
+.none {
+    display: none
+}
+
+.block {
+    display: block
+}
+
+.paddingNone {
+    padding: 0!important
+}
+
+.marginNone {
+    margin: 0!important
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+h2.title {
+    font-family: raleway;
+    font-size: 1.5em;
+    padding: 20px 0
+}
+
+.mg2 {
+    margin: 2px !important
+}
+
+.pd5 {
+    padding: 5px!important
+}
+
+.mt-10 {
+    margin-top: 10px
+}
+
+.mt-15 {
+    margin-top: 15px
+}
+
+.mt-20 {
+    margin-top: 20px
+}
+
+.mt-30 {
+    margin-top: 30px
+}
+
+.mt-40 {
+    margin-top: 40px
+}
+
+.mt-50 {
+    margin-top: 50px
+}
+
+.mt-70 {
+    margin-top: 70px
+}
+
+.ml-20 {
+    margin-left: 20px
+}
+
+.ml-30 {
+    margin-left: 30px
+}
+
+.mr-20 {
+    margin-right: 20px
+}
+
+.mr-30 {
+    margin-right: 30px
+}
+
+.mb-5 {
+    margin-bottom: 5px
+}
+
+.mb-10 {
+    margin-bottom: 10px
+}
+
+.mb-20 {
+    margin-bottom: 20px
+}
+
+.mb-30 {
+    margin-bottom: 30px
+}
+
+.mb-40 {
+    margin-bottom: 40px
+}
+
+.mb-50 {
+    margin-bottom: 50px
+}
+
+.mb-70 {
+    margin-bottom: 70px
+}
+
+.btn-app {
+    background: #344d7d!important;
+    color: #fff!important
+}
+
+.btn-app:hover {
+    background: #344d7d!important;
+    color: #fff!important
+}
+
+.portlet.blue-app {
+    border: 1px solid #344d7d
+}
+
+.portlet.blue-app .portlet-title {
+    background: #344d7d!important;
+    padding: 0 10px;
+    color: #fff
+}
+
+.input-group {
+    display: table;
+    border-collapse: separate
+}
+
+.input-icon {
+    position: relative;
+    left: 0
+}
+
+.input-icon i {
+    position: absolute;
+    top: 10px;
+    left: 10px
+}
+
+.input-icon input {
+    padding-left: 25px
+}
+
+.input-group .form-control,
+.input-group-addon,
+.input-group-btn {
+    display: table-cell
+}
+
+@media (min-width: 1300px) {
+    .modal-lg {
+        width: 1100px
+    }
+}
+
+.topHead {
+    z-index: 4;
+    background: #344d7d;
+    width: 100%
+}
+
+.topHead .logo img {
+    width: 145px
+}
+
+.topHead .logo.froxa img {
+    width: 82px;
+    margin: 6px
+}
+
+.topHead nav ul {
+    margin-top: 20px
+}
+
+.topHead nav ul li {
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px
+}
+
+.topHead nav ul li a {
+    color: #fff;
+    cursor: pointer
+}
+
+nav.sidebarMenu {
+    background: #404d5e;
+    position: absolute;
+    width: 200px;
+    top: 30px;
+    height: 100%;
+    z-index: 1;
+    padding-top: 4%
+}
+
+nav.sidebarMenu ul {
+    padding: 0
+}
+
+nav.sidebarMenu ul li {
+    list-style: none;
+    padding: 10px 25px
+}
+
+nav.sidebarMenu ul li a {
+    color: #fff;
+    text-decoration: none
+}
+
+.menuFather {
+    border-bottom: 1px solid #4F5F75
+}
+
+
+
+/* FUENTES  */
+.font11 {
+    font-size: 11px !important;
+}
+.font12 {
+    font-size: 12px !important;
+}
+.font13 {
+    font-size: 13px !important;
+}
+
+
+.portlet .table td, .table th {
+    font-size: 14px;
+}
+
+.portlet>.portlet-title>.caption {
+    font-size: 14px !important;
+}
+
+.portlet .table {
+    margin-bottom: 0px !important;
+}
+
+/*Iconos*/
+.btn-mini {
+    padding: 1px 5px !important;
+}
+
+i[class*="icon-"]+span {
+    padding-top: 11px !important;
+    margin-bottom: 4px;
+}
+
+i[class*="icon-"] {
+    margin: -3px 0px !important;
+}
+.menuFather a.title.closed:after {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: inherit;
+    margin-left: 20px;
+    color: #eee;
+    cursor: pointer
+}
+
+.menuFather a.title.open:after {
+    content: "\f0d8";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: inherit;
+    margin-left: 20px;
+    color: #eee;
+    cursor: pointer
+}
+
+.menuFather .submenu {
+    margin-top: 15px
+}
+
+.size-30{
+    font-size: 30px;
+}
+
+body {
+    font-family: sans-serif
+}
+
+.navCubes {
+    margin-left: 15px;
+    float: left;
+    /*width: 97.85%;*/
+    display: block
+}
+
+.navCubes li {
+    text-align: center;
+    margin-right: 15px;
+    float: left;
+    margin-bottom: 15px;
+    list-style: none
+}
+
+.navCubes li a {
+    background-color: #333;
+    background-image: -moz-linear-gradient(top, #333, #454545);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from( #333 3), to( #454545));
+    background-image: -webkit-linear-gradient(top, #333, #454545);
+    background-image: -o-linear-gradient(top, #333, #454545);
+    background-image: linear-gradient(to bottom, #333, #454545);
+    background-repeat: repeat-x!important;
+    background-position: -30px!important;
+    display: block;
+    padding-top: 20px;
+    float: left;
+    min-height: 115px;
+    width: 108px;
+    color: #FFF;
+    vertical-align: middle;
+    text-decoration: none;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 5px!important;
+    -moz-border-radius: 5px!important;
+    border-radius: 5px!important;
+    -webkit-transition-property: background-position, -webkit-border-bottom-left-radius, -webkit-box-shadow;
+    -moz-transition-property: background-position, -moz-border-radius-bottomleft, -moz-box-shadow;
+    -webkit-transition-duration: .8s;
+    -moz-transition-duration: .8s
+}
+
+.navCubes li a:hover {
+    background-position: 0!important;
+    border-bottom-left-radius: 50% 20px!important;
+    box-shadow: -5px 10px 15px rgba(0, 0, 0, .25);
+    position: relative!important;
+    z-index: 10
+}
+
+.navCubes li a i {
+    font-size: 50px;
+    width: 50px;
+    margin: 10px 0
+}
+
+.navCubes li a span {
+    display: block;
+    padding-top: 20px
+}
+.quicksidebarinformes {
+    width: 560px;
+    height: 93%;
+    padding-top: 10px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 5;
+    background: #e9e9e9;
+    border: 1px solid #ccc
+}
+
+.quicksidebar {
+    width: 560px;
+    height: 93%;
+    padding-top: 10px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 5;
+    background: #e9e9e9;
+    border: 1px solid #ccc
+}
+
+.modalsidebar {
+    width: 560px;
+    height: 100%;
+    padding-top: 65px;
+    position: fixed;
+    right: 0;
+    z-index: 3;
+    background: #e9e9e9;
+    border: 1px solid #ccc;
+}
+
+.modalsidebarnuevo {
+    width: 560px;
+    padding-top: 65px;
+    right: 0;
+    z-index: 3;
+    background: #e9e9e9;
+    border: 1px solid #ccc;
+    position: absolute;
+    min-height: 100%;
+}
+
+.titlePage {
+    margin: 35px 15px
+}
+
+.titlePage h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    font-variant: small-caps;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+
+
+/*PORTLET LATERAL*/
+portlet_div[data-type='lateral'] {
+    /*width: 735px;*/
+    width: 900px;
+    font-size: 10px;
+    height: 95%;
+    top: 5px;
+    left: 5px;
+    z-index: 3;
+    padding: 0;
+    position: fixed;
+    padding-top: 57px;
+}
+portlet_div[data-type='lateral'] .closePortlet  {
+    display: block !important;
+}
+
+portlet_div[data-type='lateral'] .collapse  {
+    display: none !important;
+}
+
+
+portlet_div[data-type='lateral'] > div {
+    height: 100%;
+}
+
+portlet_div[data-type='lateral'] > div > .portlet {
+    height: 100%;
+}
+
+portlet_div[data-type='lateral'] table tbody tr {
+    cursor: pointer;
+}
+
+
+.swal2-container {
+    z-index: 100000000 !important;
+}
+
+tr[data-show] {
+    cursor: pointer;
+}
+
+.grey {
+    color: #989898;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.titlea {
+    color: #333 !important;
+}
+
+.MetatagLabelTd{
+    width: 120px;
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 30px;
+    margin: 6px;
+    vertical-align:middle;
+    text-align:right;
+    background-color: rgb(248, 251, 253);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.MetatagLabelSpan{
+    vertical-align:middle;
+    text-align:right;
+}
+
+.botonRedondo{
+    border-radius: 20% !important;
+}
+
+.botonPanel{
+    width: 18%;
+    margin-right: 2%;
+    height: 150px;
+    font-size: 2em;
+}
+
+.botonPanelFase{
+    width: 100%;
+    height: 75px;
+    font-size: 2em;
+}
+.botonAvisoEncargado{
+    width: 100%;
+    height: 75px;
+    font-size: 2em;
+    background: #d20000;
+    color: white;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.valores_registro{
+    border: 1px solid black;
+}
+
+.form-input-froxa{
+    height: 34px;
+    padding: 6px 12px;
+    background-color: #fff;
+    border: 1px solid #c2cad8;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-left: 5px;
+}
+
+.float-right{
+    display: inline-block;
+    float: right;
+}
+
+.filters{
+    margin-top: -10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.ml-15{
+    margin-left: 15px;
+}
+#PanelDocumentosOF td .btn.btn-outline.blue-madison{
+    font-size: 30px;
+    min-width: 50px;
+}
+#PanelDocumentosOF td.textLeft{
+    font-size: 20px;
+}
+#documentos td .btn.btn-outline.blue-madison{
+    font-size: 30px;
+    min-width: 50px;
+}
+#documentos td.textLeft{
+    font-size: 20px;
+}
+.avisoEncargado{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 19px;
+    width: 100%;
+    min-height: 100px;
+    overflow-y: scroll;
+}
+.btn-froxa{
+    color: #fff;
+    background-color: #344d7d;
+    border-color: #344d7d;
+}
+. btn-froxa-2{
+    color: #fff;
+    background-color: #4473b2;
+    border-color:  #4473b2;
+}
+.h-40{
+    min-height: 40px;
+}
+.h-50{
+    min-height: 50px;
+}
+.col-bolsas .if-bolsas{
+    padding-top: 5px;
+    border: 1px solid black;
+}
+
+.col-bolsas .if-bolsas input{
+    font-size: 19px;
+    text-align: center;
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+#table-registros h4{
+    text-align: left;
+}
+
+#table-registros h4 b{
+    font-weight: 400;
+}
+.valor_parte{
+    display: inline-block;
+    background: rgba(102, 156, 255, 0.39);
+    padding: 0px 7px;
+    border-radius: 5px !important;
+    margin-right: 4px;
+    margin-bottom: 3px;
+}
+
+#textoAviso{
+    color: red;
+    padding-bottom: 15px;
+    font-weight: bold;
+
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 10000;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 768px) {
+    .wrapper {
+        max-width: 950px
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper {
+        max-width: 1170px
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        max-width: 1370px
+    }
+}
+
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
