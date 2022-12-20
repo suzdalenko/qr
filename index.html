@@ -27,7 +27,7 @@
     <div>
         <div class="container-fluid">
             <div class="text-center">
-                <div id="app" data-v-app=""><span style="display: none;"></span><div class="text_align_center"><h6>ARTÍCULO: POTA ENTERA NZ L 400/600</h6><input type="text" id="input_qr_focus" placeholder=" ESCANEAR PALETA" style="display: none;"><!-- recepcionar_paleta_almacen_fabrica____111 --></div><div style=""><table><tbody><tr><td class="allrigth">ARTÍCULO PALETA:</td> <td class="allleft">POTA ENTERA NZ L 400/600</td></tr><tr><td class="allrigth">CANTIDAD:</td> <td class="allleft">444 kg</td></tr><tr><td></td><td class="allleft"><input type="number" class="input_numbrer" id="input_id_kilos"> kg<br><input type="number" class="input_numbrer" id="input_id_cajas"> cajas</td></tr><tr><td class="allrigth">LOTE:</td> <td class="allleft">N1204</td></tr><tr><td class="allrigth">FECHA CAD:</td> <td class="allleft">2222-11-01</td></tr></tbody></table><br><div><button class="button_pal cancelado">CANCELAR</button><button class="button_pal aceptado">ACEPTAR</button></div></div> ingredienteOf__id: 224194 <br> ultimo__qr: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br> miQR__articulo__id: 2721 <br> ingrediente: {
+                <div id="app" data-v-app=""><span style="display: none;"></span><div class="text_align_center"><h6>TABLET: POTA ENTERA NZ L 400/600</h6><input type="text" id="input_qr_focus" placeholder=" ESCANEAR PALETA" style="display: none;"><!-- recepcionar_paleta_almacen_fabrica____111 --></div><div style=""><table><tbody><tr><td class="allrigth">ARTÍCULO PALETA:</td> <td class="allleft">POTA ENTERA NZ L 400/600</td></tr><tr><td></td><td class="allleft"><input type="number" class="input_numbrer" id="input_id_kilos"> kg<br><input type="number" class="input_numbrer" id="input_id_cajas"> cajas</td></tr><tr><td class="allrigth">CANTIDAD:</td> <td class="allleft">444 kg</td></tr><tr><td class="allrigth">LOTE:</td> <td class="allleft">N1204</td></tr><tr><td class="allrigth">FECHA CAD:</td> <td class="allleft">2222-11-01</td></tr></tbody></table><br><div><button class="button_pal cancelado">CANCELAR</button><button class="button_pal aceptado">ACEPTAR</button></div></div> ingredienteOf__id: 224194 <br> ultimo__qr: xxxxxxxxxxxxxxxxxxxxxxxxx <br> miQR__articulo__id: 2721 <br> ingrediente: {
   "id": 224194,
   "__articulo__id": 2721,
   "__articulo____erp": "402200120",
@@ -126,7 +126,7 @@
                         alert('CÓDIGO QR TABLET NO VÁLIDO'); window.location.reload()
                     }
                 /*
-                    escaneado paleta real en la fabrica xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    escaneado paleta real en la fabrica xxxxxxxxxxxxxxxxxxxxxxxxx
                 */
                 } else if (!inputQrCodeText.includes('_______') && inputQrCodeText.length > 22) { 
                     let qrObj = this.ParseQrPaleta(inputQrCodeText)
@@ -158,7 +158,7 @@
                 fetch(window.location.origin + '/backendproduccion/public/index.php/api/current__ingredienteof/'+ingredienteOf__id).then(res => res.json()).then(ingredienteOf => {
                             if(ingredienteOf && ingredienteOf.id == ingredienteOf__id && ingredienteOf.__articulo__id && ingredienteOf.__ordenfabricacion__id){
                                 AppContextS0.INGREDIENTEOF__OBJ                   = ingredienteOf
-                                AppContextS0.articulo__qr__creado                 = 'ARTÍCULO: '+ingredienteOf.__articulo____descripcion
+                                AppContextS0.articulo__qr__creado                 = 'TABLET: '+ingredienteOf.__articulo____descripcion
                                 document.getElementById('h1_title_id').innerText  = ' ESCANEAR PALETA'
                                 AppContextS0.current_action                       = ' ESCANEAR PALETA'
                                 AppContextS0.miQR__articulo__id                   = ingredienteOf.__articulo__id
@@ -195,6 +195,7 @@
                 window.location.reload()
             },
             AcceptPage(){
+                if(!((input_id_kilos.value && input_id_cajas.value) || (!input_id_kilos.value && !input_id_cajas.value))) return
                 let thisAppContext3 = this
                 if(this.botonAceptarClicked) return
                 this.botonAceptarClicked = true
@@ -216,7 +217,6 @@
                             Swal.fire({ title: 'No se encuentra el parte', text : '', icon : 'error', confirmButtonText: 'Continuar' })
                         }
                         thisAppContext3.botonAceptarClicked = false
-                        thisAppContext3.current__action     = null
                     }).catch(error => {alert('ERROR recepcionar paleta ' + error); window.location.reload()})
                 }
 
@@ -290,6 +290,11 @@
     }
     #input_qr_focus{
         text-align: center;
+    }
+    h6{
+        font-weight: 900;
+        font-size: 17px;
+        color: black;
     }
 </style>
 
