@@ -20,19 +20,56 @@
     <div>
         <a class="title" href="http://localhost/mes/escanearqr">
             <img class="img_logo_froxa" src="./ESCANEAR TABLET_files/logo2.png">
-            <h1 class="h1_title_page" id="h1_title_id">ESCANEAR TABLET</h1>
+            <h1 class="h1_title_page" id="h1_title_id">COMPROBAR DATOS</h1>
         </a>
     </div>
        
     <div>
         <div class="container-fluid">
             <div class="text-center">
-                <div id="app" data-v-app=""><span style="display: none;"></span><div class="text_align_center"><h6></h6><input type="text" id="input_qr_focus" placeholder=" ESCANEAR TABLET"><!-- recepcionar_paleta_almacen_fabrica____111 --></div><div><table><tbody><tr><td class="allrigth">ARTÍCULO PALETA:</td> <td class="allleft">__descripcion __descripcion __descripcion</td></tr><tr><td class="allrigth">LOTE:</td> <td class="allleft">__lote</td></tr><tr><td class="allrigth">FECHA CAD:</td> <td class="allleft">01-01-1111</td></tr><tr><td class="allrigth">CANTIDAD:</td> <td class="allleft">111 kg</td></tr><tr><td></td><td class="allleft"><input type="number" class="input_numbrer" id="input_id_kilos"> kg<br><input type="number" class="input_numbrer" id="input_id_cajas"> cajas</td></tr></tbody></table><br><div><button class="button_pal cancelado">CANCELAR</button><button class="button_pal aceptado">ACEPTAR</button></div></div> ingredienteOf__id:  <br> ultimo__qr:  <br> miQR__articulo__id:  <br> ingrediente: {} <br> paleta: {
-  "__descripcion": "__descripcion __descripcion __descripcion",
-  "__lote": "__lote",
-  "__fecha": "01-01-1111",
-  "__cantidad": 111
-} <br> current__action:  <br></div>
+                <div id="app" data-v-app=""><span style="display: none;"></span><div class="text_align_center"><h6>ARTÍCULO: POTA ENTERA NZ L 400/600</h6><input type="text" id="input_qr_focus" placeholder=" ESCANEAR PALETA" style="display: none;"><!-- recepcionar_paleta_almacen_fabrica____111 --></div><div style=""><table><tbody><tr><td class="allrigth">ARTÍCULO PALETA:</td> <td class="allleft">POTA ENTERA NZ L 400/600</td></tr><tr><td class="allrigth">CANTIDAD:</td> <td class="allleft">444 kg</td></tr><tr><td></td><td class="allleft"><input type="number" class="input_numbrer" id="input_id_kilos"> kg<br><input type="number" class="input_numbrer" id="input_id_cajas"> cajas</td></tr><tr><td class="allrigth">LOTE:</td> <td class="allleft">N1204</td></tr><tr><td class="allrigth">FECHA CAD:</td> <td class="allleft">2222-11-01</td></tr></tbody></table><br><div><button class="button_pal cancelado">CANCELAR</button><button class="button_pal aceptado">ACEPTAR</button></div></div> ingredienteOf__id: 224194 <br> ultimo__qr: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br> miQR__articulo__id: 2721 <br> ingrediente: {
+  "id": 224194,
+  "__articulo__id": 2721,
+  "__articulo____erp": "402200120",
+  "__articulo____descripcion": "POTA ENTERA NZ L 400/600",
+  "__cantidad": "1500.0000",
+  "__cantidaddevuelta": "0.0000",
+  "__cantidaddevuelta__carretillero": null,
+  "__cantidaddevuelta__planta": null,
+  "__cantidaddevuelta__agrupada": null,
+  "__cantidadreal": "1080.0000",
+  "__cantidadrecibida": "1080.0000",
+  "__factor": "1.0000",
+  "__formula": "consumo",
+  "__ingrediente__id": 9243,
+  "__ordenfabricacion__id": 25740,
+  "__ordenfabricacion____erp": "1004828",
+  "__ordenfabricacion____fechainicioprevista": "2022-12-15",
+  "__preciocoste": "3.8825",
+  "__preciobase": "3.8825",
+  "__preciodescuento": "0.0000",
+  "__importeingrediente": null,
+  "__divisionimporteingrediente": null,
+  "__receta__id": 957,
+  "__receta____erp": "500122401",
+  "__stock": "122093.0021",
+  "__ultimolote": "DIS199",
+  "__ultimacaducidad": "2024-05-05",
+  "__estadopeticion": "recepcionado",
+  "__estadodevolucion": null,
+  "__zona__id": 1,
+  "__zona____descripcion": "Descongelacion",
+  "__state": "activo",
+  "created_at": "2022-12-14 10:25:07",
+  "updated_at": "2022-12-15 10:20:14"
+} <br> paleta: {
+  "__sscc": "384108090002317635",
+  "__ean": "8410809003638",
+  "__lote": "N1204",
+  "__cantidad": "444",
+  "__fecha": "2222-11-01",
+  "__descripcion": "POTA ENTERA NZ L 400/600"
+} <br> current__action: 2 - entrada con QR de almacen a produccion <br></div>
 <script>
     const { createApp } = Vue
     createApp({
@@ -46,7 +83,7 @@
                 mostrar_table_actions : false,
                 
                 INGREDIENTEOF__OBJ    : {},
-                PALETA__ART           : {__descripcion:'esto es una larga descripcion del articulo que hay', __lote:'__lote', __fecha:'01-01-1111', __cantidad: 111},
+                PALETA__ART           : {},
                 paleta__kilos         : '',
                 paleta__cajas         : '',
 
