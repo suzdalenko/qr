@@ -65,163 +65,7 @@
   "__fecha": "2222-11-01",
   "__descripcion": "POTA ENTERA NZ L 400/600"
 } <br> current__action: 2 - entrada con QR de almacen a produccion <br></div>
-<script>
-    const { createApp } = Vue
-    createApp({
-        data() {
-            return {
-                ingredienteOf__id     : null,
-                escanear_tablet_paleta: true,
-                current_action        : ' ESCANEAR TABLET',
-                input__qr             : '',
-                articulo__qr__creado  : '',
-                mostrar_table_actions : false,
-                
-                INGREDIENTEOF__OBJ    : {},
-                PALETA__ART           : {},
-                paleta__kilos         : '',
-                paleta__cajas         : '',
 
-                ultimo__qr            : '',
-                miQR__articulo__id    : null,
-                show_input_qr         : true,  
-                current__action       : null,
-                botonAceptarClicked   : false
-            }
-        },
-        created(){
-           
-        },
-        computed:{
-            inputEscaneado(){ 
-                this.botonAceptarClicked = false
-                let inputQrCodeText      = this.input__qr.trim()
-                this.ultimo__qr          = inputQrCodeText
-                this.input__qr           = '' 
-
-                /* 
-                    escaneando qr creado por mi:
-                                                                    "__articulo__id":2721                    
-                        2 - entrada con QR de almacen a produccion (2_______224194ssssssss 2_______224011ssssssss 2_______224194ssssssss) 
-
-                */
-                if(inputQrCodeText.includes('_______') && inputQrCodeText.length == 22){ 
-                    let arrayCodeText      = inputQrCodeText.split('_______')
-                    let codeAccion         = parseInt(arrayCodeText[0])
-                    this.ingredienteOf__id = arrayCodeText[1].split('s').join('')
-                    
-                    if( parseInt(this.ingredienteOf__id) > 1 && (codeAccion == 2)){      
-                        switch(codeAccion){
-                            case 2: 
-                                this.current__action = '2 - entrada con QR de almacen a produccion'
-                                break
-                        }
-                        this.TraerArticuloMiQrIngrediente(this.ingredienteOf__id) // la tablet me pide tal articulo
-                    } else {
-                        alert('CÓDIGO QR TABLET NO VÁLIDO'); window.location.reload()
-                    }
-                /*
-                    escaneado paleta real en la fabrica xxxxxxxxxxxxxxxxxxxxxxxxx
-                */
-                } else if (!inputQrCodeText.includes('_______') && inputQrCodeText.length > 22) { 
-                    let qrObj = this.ParseQrPaleta(inputQrCodeText)
-                    this.TraerArticuloPaletaEntregaCamarista(qrObj)
-                    
-                } else if (inputQrCodeText) {
-                    alert('CÓDIGO QR NO VÁLIDO: ' + inputQrCodeText)
-                }
-                return this.input__qr
-            }  
-        },
-        mounted(){
-            this.SetImputFocus()    
-            var input_id_kilos = document.getElementById('input_id_kilos')
-            var input_id_cajas = document.getElementById('input_id_cajas')
-                input_id_kilos.addEventListener('input', () => {
-                    input_id_kilos.value && input_id_cajas.value ? this.PALETA__ART.__cantidad = input_id_kilos.value * input_id_cajas.value: console.log('none')  
-                })
-                input_id_cajas.addEventListener('input', () => {
-                    input_id_kilos.value && input_id_cajas.value ? this.PALETA__ART.__cantidad = input_id_kilos.value * input_id_cajas.value: console.log('none')     
-                })
-        },
-        methods:{
-            SetImputFocus(){
-                setTimeout(()=>{ document.getElementById('input_qr_focus').focus() }, 1000)
-            },
-            TraerArticuloMiQrIngrediente(ingredienteOf__id){ 
-                let AppContextS0 = this
-                fetch(window.location.origin + '/backendproduccion/public/index.php/api/current__ingredienteof/'+ingredienteOf__id).then(res => res.json()).then(ingredienteOf => {
-                            if(ingredienteOf && ingredienteOf.id == ingredienteOf__id && ingredienteOf.__articulo__id && ingredienteOf.__ordenfabricacion__id){
-                                AppContextS0.INGREDIENTEOF__OBJ                   = ingredienteOf
-                                AppContextS0.articulo__qr__creado                 = 'TABLET: '+ingredienteOf.__articulo____descripcion
-                                document.getElementById('h1_title_id').innerText  = ' ESCANEAR PALETA'
-                                AppContextS0.current_action                       = ' ESCANEAR PALETA'
-                                AppContextS0.miQR__articulo__id                   = ingredienteOf.__articulo__id
-                                AppContextS0.SetImputFocus()
-                                
-                            } else {
-                                alert('INGREDIENTE NO ENCOTRADO'); window.location.reload()
-                            }
-                        }).catch(error => {alert('ERROR ESCANER INGREDIENTE QR ' + error); window.location.reload()})
-            },
-            ParseQrPaleta(__qr__){
-                return {__sscc:'384108090002317635', __ean: '8410809003638', __lote:'N1204', __cantidad: '444', __fecha: '2222-11-01'}
-            },
-            TraerArticuloPaletaEntregaCamarista(qrObj){
-                let AppContextS1 = this
-                fetch(window.location.origin + '/backendproduccion/public/index.php/api/get_articulo_from_ean/'+qrObj.__ean).then(res => res.json()).then(paletaArt => {
-                        if(paletaArt && paletaArt.id == AppContextS1.INGREDIENTEOF__OBJ.__articulo__id && paletaArt.__descripcion && paletaArt.id){
-                            // el mismo articulo entre 2 qr
-                            AppContextS1.show_input_qr                        = false
-                            AppContextS1.mostrar_table_actions                = true
-                            AppContextS1.PALETA__ART                          = qrObj
-                            AppContextS1.PALETA__ART.__descripcion            = paletaArt.__descripcion
-                            document.getElementById('h1_title_id').innerText  = 'COMPROBAR DATOS'
-                            
-                        } else {
-                            alert('PALETA NO VALIDA \n ES DE OTRO ARTÍCULO QUE INDICADO EN EL QR TABLET \n '+AppContextS1.articulo__qr__creado+' \n PALETA '+paletaArt.__descripcion)
-                        }
-                    }).catch(error => alert('ERROR Al BUSCAR ARTÍCULO PALETA'))
-            },
-            //    CaducidadFormateada:function () {
-            //        return '20' + this.PALETA__ART.__fecha.substr(4, 2) + '-' + this.PALETA__ART.__fecha.substr(2, 2) + '-' + this.PALETA__ART.__fecha.substr(0, 2);
-            //    },
-            CancelPage(){
-                window.location.reload()
-            },
-            AcceptPage(){
-                if(!((input_id_kilos.value && input_id_cajas.value) || (!input_id_kilos.value && !input_id_cajas.value))) return
-                let thisAppContext3 = this
-                if(this.botonAceptarClicked) return
-                this.botonAceptarClicked = true
-                if(!this.PALETA__ART.__cantidad || this.PALETA__ART.__cantidad < 1) { this.botonAceptarClicked = false; alert('Cantidad obligatoria'); return }
-                
-                if(this.current__action == '2 - entrada con QR de almacen a produccion'){
-                    let formData = new FormData()
-                        formData.append('__sscc',            this.PALETA__ART.__sscc)
-                        formData.append('__ean',             this.PALETA__ART.__ean)
-                        formData.append('__lote',            this.PALETA__ART.__lote)
-                        formData.append('__cantidad',        this.PALETA__ART.__cantidad)
-                        formData.append('__ingrediente__id', this.ingredienteOf__id)
-                        formData.append('__fecha',           this.PALETA__ART.__fecha)
-
-                    fetch(window.location.origin + '/backendproduccion/public/index.php/api/entrada_con_QR_de_almacen_a_produccion', {method:'POST', body: formData}).then(r => r.json()).then(result => {
-                        if(result && result.status == 200){ 
-                            Swal.fire({ title: 'Paleta recepcionada', text : '', icon : 'success', confirmButtonText: 'Continuar' }).then(res => window.location.reload())
-                        } else {
-                            Swal.fire({ title: 'No se encuentra el parte', text : '', icon : 'error', confirmButtonText: 'Continuar' })
-                        }
-                        thisAppContext3.botonAceptarClicked = false
-                    }).catch(error => {alert('ERROR recepcionar paleta ' + error); window.location.reload()})
-                }
-
-                
-            }
-        },
-        delimiters: ["{@", "@}"],
-    }).mount('#app')
-
-  </script>
 
 <style>
     section{
@@ -294,32 +138,6 @@
 </style>
 
 
-<script>
-
-</script>
-
-
-<!--
-   sscc                  ean   
-   18                 02  13  
-   384108090002317635    08410809003638                 210630 N512100176    742 
-00 384108090002317635 02 08410809003638 3102######## 15 210630 N512100176 37 742
-
-
-
-
-// '(02)08410809003638(3102)########(15)210630(10)N512100176(37)742'
-                // '(3102)#######(15)210630(10)N5121001176(37)945'
-                //  0038410809000231763502084108090036383102
-                //  0038410809000231763502084108090036383102########15210630N51210017637742
-
-    let formData = new FormData(); formData.append('qr', inputQrCodeText);
-       fetch(window.location.origin + '/backendproduccion/public/index.php/api/save_this_qr', { method: 'POST', body: formData })
-       alert(inputQrCodeText)
--->            </div>
-        </div>
-    </div>
-
     <style>
         .title {
           background-color: #172f5b;
@@ -343,17 +161,4 @@
         }
     </style>
 
-<script>(() => {
-        window.addoncropExtensions = window.addoncropExtensions || [];
-        window.addoncropExtensions.push({
-            mode: 'emulator',
-            emulator: 'Foxified',
-            extension: {
-                id: 44,
-                name: 'Descargar videos de Youtube y MP3',
-                version: '17.2.8',
-                date: 'November 26, 2022',
-            },
-            flixmateConnected: false,
-        });
-    })();</script></body></html>
+</body></html>
