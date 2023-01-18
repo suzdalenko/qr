@@ -163,4 +163,7 @@
             font-weight: 700;
         }
     </style>
+    <script>
+        if ('serviceWorker' in navigator) window.addEventListener('load', function() { navigator.serviceWorker.register('/pwa.js'); }) 
+    </script>
 </body></html>
